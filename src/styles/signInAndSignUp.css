@@ -37,4 +37,11 @@
   text-decoration: none;
   color: #722f79;
 }
+
+.err {
+  color: red;
+  padding: 5px;
+  text-align: center;
+  font-weight: bold;
+}
 /*# sourceMappingURL=signInAndSignUp.css.map */
