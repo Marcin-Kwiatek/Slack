@@ -7,6 +7,7 @@ import {
 import React from 'react';
 import SignIn from './components/SignIn';
 import SignUp from './components/SignUp';
+import MainPage from './components/MainPage';
 
 
 function App() {
@@ -19,6 +20,9 @@ function App() {
                 </Route>
                 <Route exact path='/SignUp'>
                     <SignUp></SignUp>
+                </Route>
+                <Route exact path='/'>
+                    <MainPage></MainPage>
                 </Route>
             </Switch>
         </Router>)

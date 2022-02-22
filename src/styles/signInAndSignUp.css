@@ -27,4 +27,14 @@
 .submit_button:hover {
   background-color: #722f79;
 }
+
+.text {
+  margin: 30px 0;
+  text-align: center;
+}
+
+.link {
+  text-decoration: none;
+  color: #722f79;
+}
 /*# sourceMappingURL=signInAndSignUp.css.map */
