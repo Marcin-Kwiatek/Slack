@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Logo from './Logo';
 import { Link, useHistory } from "react-router-dom";
 import '../styles/signInAndSignUp.css'
+import { signUp } from '../utils/Api';
+
 
 
 
@@ -18,7 +20,14 @@ function SignUp() {
             setErr('Nie poprawna wartość login lub hasło')
         }
         else {
-            history.push("/SignIn");
+            signUp(login, password)
+                .then((response) => {
+                    if (response.status === 409) {
+                        setErr('Ten login jest już zajęty')
+                    } else {
+                        history.push("/SignIn");
+                    }
+                })
         }
     }
     const changeLogin = (e) => {
