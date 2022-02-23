@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import Logo from './Logo';
 import '../styles/signInAndSignUp.css'
 import { Link, useHistory } from "react-router-dom";
+import { signIn } from '../utils/Api';
+
 
 
 
@@ -18,7 +20,18 @@ function SignIn() {
             setErr('Nie poprawna wartość login lub hasło')
         }
         else {
-            history.push('/')
+            signIn(login, password)
+                .then((response) => {
+                    if (response.status === 404) {
+                        setErr('Nie znaleziono użytkownika o podanym loginie lub haśle')
+                    } else {
+                        response.json().then(data => {
+                            localStorage.setItem('accessToken', data.accessToken);
+                            localStorage.setItem('currentUserId', data.userId);
+                            history.push("/");
+                        })
+                    }
+                })
         }
     }
     const changeLogin = (e) => {
