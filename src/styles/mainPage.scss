@@ -1,0 +1,42 @@
+@import './variables';
+
+.navbar{
+    background-color: $darkPurple;
+    height: 5%;
+    width: 100%;
+    position: absolute;
+}
+.sidebar{
+    background-color: $darkPurple;
+    width: 20%;
+    position: absolute;
+    top: 5%;
+    height: 95%;
+    color: $white;
+}
+.current_user{
+    border-top: 1px solid $white;    
+    position: absolute;
+    height: 10%;
+    top: 0;
+    width: 100%;
+    font-size: 26px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding-left: 10px;
+}
+.sidebar_options{
+    border-top: 1px solid $white;    
+    position: absolute;
+    height: 90%;
+    top: 10%;
+    width: 100%;
+}
+.content{
+    position: absolute;
+    height: 95%;
+    width: 80%;
+    top: 5%;
+    left: 20%;
+}

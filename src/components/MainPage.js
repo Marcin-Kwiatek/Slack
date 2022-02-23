@@ -6,9 +6,14 @@ import '../styles/mainPage.css'
 function MainPage() {
 
     return (
-        <div>
-           
-        </div>
+        <>
+            <div className='navbar'></div>
+            <div className='sidebar'>
+                <div className='current_user'>Marcin</div>
+                <div className='sidebar_options'></div>
+            </div>
+            <div className='content'></div>
+        </>
     )
 }
 

@@ -1,6 +1,6 @@
 .container {
   max-width: 500px;
-  background-color: white;
+  background-color: #FFFFFF;
   margin-top: 32px;
   margin-left: auto;
   margin-right: auto;
@@ -16,7 +16,7 @@
 
 .submit_button {
   background-color: #611f69;
-  color: white;
+  color: #FFFFFF;
   width: 360px;
   height: 50px;
   margin: 40px 70px;
@@ -39,7 +39,7 @@
 }
 
 .err {
-  color: red;
+  color: #D8000C;
   padding: 5px;
   text-align: center;
   font-weight: bold;

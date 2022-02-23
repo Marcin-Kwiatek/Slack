@@ -2,7 +2,7 @@
 
 .container {
     max-width: 500px;
-    background-color: white;
+    background-color: $white;
     margin-top: 32px;
     margin-left: auto;
     margin-right: auto;
@@ -16,8 +16,8 @@
 }
 
 .submit_button {
-    background-color: $darkPurple;
-    color: white;
+    background-color: $purple;
+    color: $white;
     width: 360px;
     height: 50px;
     margin: 40px 70px;
@@ -39,7 +39,7 @@
 }
 
 .err {
-    color: red;
+    color: $red;
     padding: 5px;
     text-align: center;
     font-weight: bold;
