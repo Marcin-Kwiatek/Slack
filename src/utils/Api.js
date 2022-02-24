@@ -18,3 +18,11 @@ export const signIn = (login, password) => {
         body: JSON.stringify({ login: login, password: password })
     })
 }
+export const getUsers = () => {
+    return fetch(`http://localhost:5000/users`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'authorization': localStorage.getItem("accessToken")
+        },
+    })
+}

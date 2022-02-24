@@ -1,0 +1,9 @@
+@import './variables';
+
+.user_nick{
+    font-size: 30px;
+    cursor: pointer;
+}
+.user_nick:hover{
+    background-color: $veryDarkPurple;
+}
