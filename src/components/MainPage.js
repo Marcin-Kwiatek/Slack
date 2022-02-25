@@ -19,7 +19,6 @@ function MainPage() {
             .then(function (response) { return response.json() })
             .then((data) => {
                 setMyNickName(data.data)
-                console.log(data)
             })
             .catch((error) => console.error(error))
         getUsers()
@@ -55,7 +54,10 @@ function MainPage() {
                 <div className='conversation_header'>{chatUser}</div>
                 <div className='messages'></div>
                 <div className='add_message'>
-                    <input className='add_message_input'></input>
+                    <div className='add_message_container'>
+                        <input className='add_message_input' placeholder='Wyślij wiadomość'></input>
+                        <button className='add_message_button'>Wyślij</button>
+                    </div>
                 </div>
             </div>
         </>

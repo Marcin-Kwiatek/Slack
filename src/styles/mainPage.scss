@@ -60,7 +60,24 @@
 }
 .add_message_input{
     width: 80%;
-    height: 30%;
+    height: 50%;
     align-items: center;
     justify-content: center;
+    border: none;
+}
+.add_message_container{
+    border: 1px solid $gray;    
+    height: 60%;
+    width: 80%;
+    border-radius: 5px;
+    @include setDivVerticallyCenter();
+}
+.add_message_button{
+    height: 50%;
+    width: 20%;
+    border: none;
+    cursor: pointer;
+}
+.add_message_button:hover{
+    background-color: $gray;
 }

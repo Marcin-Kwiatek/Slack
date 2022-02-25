@@ -83,12 +83,37 @@
 
 .add_message_input {
   width: 80%;
-  height: 30%;
+  height: 50%;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  border: none;
+}
+
+.add_message_container {
+  border: 1px solid #787878;
+  height: 60%;
+  width: 80%;
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.add_message_button {
+  height: 50%;
+  width: 20%;
+  border: none;
+  cursor: pointer;
+}
+
+.add_message_button:hover {
+  background-color: #787878;
 }
 /*# sourceMappingURL=mainPage.css.map */
