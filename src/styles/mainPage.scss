@@ -81,3 +81,13 @@
 .add_message_button:hover{
     background-color: $gray;
 }
+.messages{
+    overflow: auto;
+}
+.message{
+    height: 10%;
+    width: 100%;
+}
+.message:hover{
+    background-color: $whiteSmoke;
+}

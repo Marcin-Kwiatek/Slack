@@ -46,3 +46,11 @@ export const addingMessage = (chatUserId, addMessageValue) => {
         body: JSON.stringify({ id: generateId(), chatUserId: chatUserId, addMessageValue: addMessageValue, date: currentDate()})
     })
 }
+export const getMessages = (chatUserId) => {
+    return fetch(`http://localhost:5000/${chatUserId}/messages`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'authorization': localStorage.getItem("accessToken")
+        },
+    })
+}

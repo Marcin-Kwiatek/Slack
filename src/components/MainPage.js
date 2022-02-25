@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../styles/mainPage.css'
 import { getUsers } from '../utils/Api';
 import User from './User';
-import { getMyNickName, addingMessage } from '../utils/Api';
+import { getMyNickName, addingMessage, getMessages } from '../utils/Api';
 
 
 
@@ -14,9 +14,8 @@ function MainPage() {
     const [chatUser, setChatUser] = useState(null);
     const [chatUserId, setChatUserId] = useState(null);
     const [isConversationOpen, setisConversationOpen] = useState(false);
-    const [addMessageValue, setAddMessageValue] = useState('');
-
-
+    const [addMessageValue, setAddMessageValue] = useState('')
+    const [messages, setMessages] = useState([]);
 
 
     useEffect(() => {
@@ -43,6 +42,17 @@ function MainPage() {
         setChatUserId(id)
         setisConversationOpen(true)
         setAddMessageValue('')
+        getMessages(id)
+            .then(function (response) { return response.json() })
+            .then((data) => {
+                console.log(data.data)
+                if (data.data === undefined) {
+                    setMessages([])
+                }
+                else {
+                    setMessages(data.data)
+                }
+            })
     }
     const changeAddCommentInput = (e) => {
         setAddMessageValue(e.target.value)
@@ -54,6 +64,7 @@ function MainPage() {
             setAddMessageValue('')
         }
     }
+
 
     return (
         <>
@@ -70,7 +81,13 @@ function MainPage() {
             </div>
             <div className='content'>
                 <div className='conversation_header'>{chatUser}</div>
-                <div className='messages'></div>
+                <div className='messages'>
+                    {messages.map(message =>
+                        <div className='message'>
+                            <div className='message_text'>{message.text}</div>
+                        </div>
+                    )}
+                </div>
                 <div className='add_message'>
                     {isConversationOpen &&
                         <div className='add_message_container'>
