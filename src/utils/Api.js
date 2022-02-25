@@ -26,3 +26,11 @@ export const getUsers = () => {
         },
     })
 }
+export const getMyNickName = () => {
+    return fetch(`http://localhost:5000/myNickName`, {
+        headers: {
+            'Content-Type': 'application/json',
+            'authorization': localStorage.getItem("accessToken")
+        },
+    })
+}
