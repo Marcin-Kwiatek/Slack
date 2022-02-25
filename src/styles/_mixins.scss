@@ -1,0 +1,13 @@
+@mixin setDivCenter() {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+@mixin setDivVerticallyCenter() {
+    display: flex;
+    align-items: center;
+}
+@mixin setDivHorizontallyCenter() {
+    display: flex;
+    justify-content: center;
+}

@@ -1,4 +1,5 @@
 @import './variables';
+@import './mixins';
 
 .navbar{
     background-color: $darkPurple;
@@ -22,8 +23,7 @@
     width: 100%;
     font-size: 26px;
     font-weight: bold;
-    display: flex;
-    align-items: center;
+    @include setDivVerticallyCenter();
     padding-left: 10px;
 }
 .sidebar_options{
@@ -39,4 +39,28 @@
     width: 80%;
     top: 5%;
     left: 20%;
+}
+.conversation_header{
+    height: 10%;
+    width: calc(100%-10px);
+    font-size: 26px;
+    font-weight: bold;
+    border-bottom: 1px solid $gray;    
+    @include setDivVerticallyCenter();
+    padding-left: 10px;
+}
+.messages{
+    height: 70%;
+    width: 100%;
+}
+.add_message{
+    height: 20%;
+    width: 100%;
+    @include setDivCenter();
+}
+.add_message_input{
+    width: 80%;
+    height: 30%;
+    align-items: center;
+    justify-content: center;
 }

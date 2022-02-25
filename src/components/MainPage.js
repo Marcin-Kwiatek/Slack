@@ -11,6 +11,7 @@ function MainPage() {
 
     const [users, setUsers] = useState([]);
     const [myNickName, setMyNickName] = useState([]);
+    const [chatUser, setChatUser] = useState(null);
 
 
     useEffect(() => {
@@ -33,6 +34,9 @@ function MainPage() {
                 }
             })
     }, [])
+    const changeChatUser = (login) => {
+        setChatUser(login)
+    }
 
     return (
         <>
@@ -42,12 +46,18 @@ function MainPage() {
                 <div className='sidebar_options'>
                     <div className='direct_messages'>
                         {users.map(user =>
-                            <User key={user.id} login={user.login} id={user.id}></User>
+                            <User changeChatUser={changeChatUser} key={user.id} login={user.login} id={user.id}></User>
                         )}
                     </div>
                 </div>
             </div>
-            <div className='content'></div>
+            <div className='content'>
+                <div className='conversation_header'>{chatUser}</div>
+                <div className='messages'></div>
+                <div className='add_message'>
+                    <input className='add_message_input'></input>
+                </div>
+            </div>
         </>
     )
 }
