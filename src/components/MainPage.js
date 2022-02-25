@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import '../styles/mainPage.css'
 import { getUsers } from '../utils/Api';
 import User from './User';
-import { getMyNickName } from '../utils/Api';
+import { getMyNickName, addingMessage } from '../utils/Api';
 
 
 
@@ -12,6 +12,11 @@ function MainPage() {
     const [users, setUsers] = useState([]);
     const [myNickName, setMyNickName] = useState([]);
     const [chatUser, setChatUser] = useState(null);
+    const [chatUserId, setChatUserId] = useState(null);
+    const [isConversationOpen, setisConversationOpen] = useState(false);
+    const [addMessageValue, setAddMessageValue] = useState('');
+
+
 
 
     useEffect(() => {
@@ -33,8 +38,19 @@ function MainPage() {
                 }
             })
     }, [])
-    const changeChatUser = (login) => {
+    const changeChatUser = (login, id) => {
         setChatUser(login)
+        setChatUserId(id)
+        setisConversationOpen(true)
+    }
+    const changeAddCommentInput = (e) => {
+        setAddMessageValue(e.target.value)
+    }
+    const addMessage = () => {
+        if (setAddMessageValue === '') { }
+        else {
+            addingMessage(chatUserId, addMessageValue)
+        }
     }
 
     return (
@@ -54,11 +70,19 @@ function MainPage() {
                 <div className='conversation_header'>{chatUser}</div>
                 <div className='messages'></div>
                 <div className='add_message'>
-                    <div className='add_message_container'>
-                        <input className='add_message_input' placeholder='Wyślij wiadomość'></input>
-                        <button className='add_message_button'>Wyślij</button>
-                    </div>
+                    {isConversationOpen &&
+                        <div className='add_message_container'>
+                            <input
+                                className='add_message_input'
+                                placeholder='Wyślij wiadomość'
+                                onChange={changeAddCommentInput}
+                                maxLength="100">
+                            </input>
+                            <button className='add_message_button' onClick={addMessage}>Wyślij</button>
+                        </div>
+                    }
                 </div>
+
             </div>
         </>
     )

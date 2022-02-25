@@ -6,7 +6,7 @@ import '../styles/user.css'
 function User(props) {
 
     const changeUser = () => {
-        props.changeChatUser(props.login)
+        props.changeChatUser(props.login, props.id)
     }
 
     return (

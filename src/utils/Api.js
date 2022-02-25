@@ -1,4 +1,6 @@
 import generateId from '../utils/generateId';
+import currentDate from '../utils/currentDate';
+
 
 export const signUp = (login, password) => {
     return fetch(`http://localhost:5000/user`, {
@@ -32,5 +34,15 @@ export const getMyNickName = () => {
             'Content-Type': 'application/json',
             'authorization': localStorage.getItem("accessToken")
         },
+    })
+}
+export const addingMessage = (chatUserId, addMessageValue) => {
+    return fetch(`http://localhost:5000/message`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'authorization': localStorage.getItem("accessToken")
+        },
+        body: JSON.stringify({ id: generateId(), chatUserId: chatUserId, addMessageValue: addMessageValue, date: currentDate()})
     })
 }
