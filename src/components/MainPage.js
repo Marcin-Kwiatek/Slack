@@ -42,6 +42,7 @@ function MainPage() {
         setChatUser(login)
         setChatUserId(id)
         setisConversationOpen(true)
+        setAddMessageValue('')
     }
     const changeAddCommentInput = (e) => {
         setAddMessageValue(e.target.value)
@@ -50,6 +51,7 @@ function MainPage() {
         if (setAddMessageValue === '') { }
         else {
             addingMessage(chatUserId, addMessageValue)
+            setAddMessageValue('')
         }
     }
 
@@ -76,7 +78,8 @@ function MainPage() {
                                 className='add_message_input'
                                 placeholder='Wyślij wiadomość'
                                 onChange={changeAddCommentInput}
-                                maxLength="100">
+                                maxLength="100"
+                                value={addMessageValue}>
                             </input>
                             <button className='add_message_button' onClick={addMessage}>Wyślij</button>
                         </div>
