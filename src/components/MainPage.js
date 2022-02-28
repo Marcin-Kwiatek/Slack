@@ -3,6 +3,10 @@ import '../styles/mainPage.css'
 import { getUsers } from '../utils/Api';
 import User from './User';
 import { getMyNickName, addingMessage, getMessages } from '../utils/Api';
+import ClickAwayListener from 'react-click-away-listener';
+import { useHistory } from "react-router-dom";
+
+
 
 
 
@@ -16,7 +20,9 @@ function MainPage() {
     const [isConversationOpen, setisConversationOpen] = useState(false);
     const [addMessageValue, setAddMessageValue] = useState('')
     const [messages, setMessages] = useState([]);
+    const [isProfileDropdownMenuOpen, setIsProfileDropdownMenuOpen] = useState(false);
 
+    const history = useHistory()
 
     useEffect(() => {
         getMyNickName()
@@ -64,13 +70,31 @@ function MainPage() {
             setAddMessageValue('')
         }
     }
+    const showProfileDropdownMenu = () => {
+        setIsProfileDropdownMenuOpen(true)
+    }
+    const hideProfileDropdownMenu = () => {
+        setIsProfileDropdownMenuOpen(false)
+    }
+    const LogOut = () => {
+        localStorage.removeItem('currentUserId');
+        localStorage.removeItem('accessToken');
+        history.push("/SignIn");
+    }
 
 
     return (
         <>
             <div className='navbar'></div>
             <div className='sidebar'>
-                <div className='current_user'>{myNickName}</div>
+                {isProfileDropdownMenuOpen &&
+                    <ClickAwayListener onClickAway={hideProfileDropdownMenu}>
+                        <div className='profile_dropdown_menu_options' >
+                            <div className='profile_dropdown_menu_option' onClick={LogOut}>Log Out</div>
+                        </div>
+                    </ClickAwayListener>
+                }
+                <div className='current_user' onClick={showProfileDropdownMenu}>{myNickName}</div>
                 <div className='sidebar_options'>
                     <div className='direct_messages'>
                         {users.map(user =>

@@ -25,6 +25,7 @@
     font-weight: bold;
     @include setDivVerticallyCenter();
     padding-left: 10px;
+    cursor: pointer;
 }
 .sidebar_options{
     border-top: 1px solid $white;    
@@ -94,4 +95,24 @@
 }
 .message_sender{
     font-weight: bold;
+}
+.profile_dropdown_menu_options{
+    background-color: $white;
+    font-size: 20px;
+    width: 90%;
+    text-decoration: none;
+    position: absolute;
+    z-index: 2;
+    color: $veryDarkPurple;
+    left: 5%;
+    top: 10%;
+    border-radius: 3%;
+}
+.profile_dropdown_menu_option{
+    display: flex;
+    text-decoration: none;
+    cursor: pointer;
+    padding: 10px;
+    border: solid 1px rgba(var(--b6a, 219, 219, 219), 1);
+    border-radius: 3%;
 }

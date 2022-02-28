@@ -29,6 +29,7 @@
       -ms-flex-align: center;
           align-items: center;
   padding-left: 10px;
+  cursor: pointer;
 }
 
 .sidebar_options {
@@ -133,5 +134,29 @@
 
 .message_sender {
   font-weight: bold;
+}
+
+.profile_dropdown_menu_options {
+  background-color: #FFFFFF;
+  font-size: 20px;
+  width: 90%;
+  text-decoration: none;
+  position: absolute;
+  z-index: 2;
+  color: #2E0E30;
+  left: 5%;
+  top: 10%;
+  border-radius: 3%;
+}
+
+.profile_dropdown_menu_option {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 10px;
+  border: solid 1px rgba(var(--b6a, 219, 219, 219), 1);
+  border-radius: 3%;
 }
 /*# sourceMappingURL=mainPage.css.map */
