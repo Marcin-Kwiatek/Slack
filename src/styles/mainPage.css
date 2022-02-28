@@ -123,10 +123,15 @@
 
 .message {
   height: 10%;
-  width: 100%;
+  width: calc(100%-10px);
+  padding: 5px;
 }
 
 .message:hover {
   background-color: #F5F5F5;
+}
+
+.message_sender {
+  font-weight: bold;
 }
 /*# sourceMappingURL=mainPage.css.map */

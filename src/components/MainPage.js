@@ -83,7 +83,8 @@ function MainPage() {
                 <div className='conversation_header'>{chatUser}</div>
                 <div className='messages'>
                     {messages.map(message =>
-                        <div className='message'>
+                        <div key={message.id} className='message'>
+                            <div className='message_sender'>{message.login}</div>
                             <div className='message_text'>{message.text}</div>
                         </div>
                     )}

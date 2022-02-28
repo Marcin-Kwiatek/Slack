@@ -86,8 +86,12 @@
 }
 .message{
     height: 10%;
-    width: 100%;
+    width: calc(100%-10px);
+    padding: 5px;
 }
 .message:hover{
     background-color: $whiteSmoke;
+}
+.message_sender{
+    font-weight: bold;
 }
