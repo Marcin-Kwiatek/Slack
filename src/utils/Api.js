@@ -54,3 +54,12 @@ export const getMessages = (chatUserId) => {
         },
     })
 }
+export const addSearchUser = (value) => {
+    return fetch(`http://localhost:5000/searchUser`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ login: value })
+    })
+}

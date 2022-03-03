@@ -58,6 +58,7 @@
     height: 20%;
     width: 100%;
     @include setDivCenter();
+    z-index: 1;
 }
 .add_message_input{
     width: 80%;

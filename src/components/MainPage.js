@@ -5,6 +5,7 @@ import User from './User';
 import { getMyNickName, addingMessage, getMessages } from '../utils/Api';
 import ClickAwayListener from 'react-click-away-listener';
 import { useHistory } from "react-router-dom";
+import SearchUser from './SearchUser';
 
 
 
@@ -85,7 +86,9 @@ function MainPage() {
 
     return (
         <>
-            <div className='navbar'></div>
+            <div className='navbar'>
+                <SearchUser changeChatUser={changeChatUser}></SearchUser>
+            </div>
             <div className='sidebar'>
                 {isProfileDropdownMenuOpen &&
                     <ClickAwayListener onClickAway={hideProfileDropdownMenu}>

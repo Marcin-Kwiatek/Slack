@@ -1,0 +1,28 @@
+@import './variables';
+
+.searchUserInput {
+    border-radius: 3px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 300;
+    padding: 5px 12px;
+    position: relative;
+    left: 20%;
+    width: 50%;
+}
+.searchedUsersContainer {
+    position: absolute;
+    left: 20%;
+    background-color: $white;
+    width: calc(50% + 24px);
+    z-index: 10;
+}
+.searchedUser{
+    border: 1px solid $veryDarkPurple; 
+    padding: 15px 12px;
+    cursor: pointer;
+    border-radius: 3px;
+}
+.searchedUser:hover{
+    background-color: $blue;
+}
