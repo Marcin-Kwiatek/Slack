@@ -33,9 +33,9 @@ function SearchUser(props) {
     return (
         <ClickAwayListener onClickAway={hideSearchedUsers}>
             <div>
-                <input type='text' placeholder="Szukaj" className="searchUserInput" onChange={changeSearchUser}></input>
-                <div className='searchedUsersContainer'>{searchUsers.map(user =>
-                    <div onClick={() => changeUser(user.login, user.id)} className="searchedUser" key={user.id}>{user.login}</div>
+                <input type='text' placeholder="Szukaj" className="search_user_input" onChange={changeSearchUser}></input>
+                <div className='searched_users_container'>{searchUsers.map(user =>
+                    <div onClick={() => changeUser(user.login, user.id)} className="searched_user" key={user.id}>{user.login}</div>
                 )}
                 </div>
             </div>

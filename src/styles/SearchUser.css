@@ -1,4 +1,4 @@
-.searchUserInput {
+.search_user_input {
   border-radius: 3px;
   cursor: pointer;
   font-size: 14px;
@@ -9,7 +9,7 @@
   width: 50%;
 }
 
-.searchedUsersContainer {
+.searched_users_container {
   position: absolute;
   left: 20%;
   background-color: #FFFFFF;
@@ -17,14 +17,14 @@
   z-index: 10;
 }
 
-.searchedUser {
+.searched_user {
   border: 1px solid #2E0E30;
   padding: 15px 12px;
   cursor: pointer;
   border-radius: 3px;
 }
 
-.searchedUser:hover {
+.searched_user:hover {
   background-color: #1264a3;
 }
 /*# sourceMappingURL=SearchUser.css.map */
